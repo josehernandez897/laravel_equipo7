@@ -17,11 +17,11 @@
                     </div> 
                     <div class="card-body">
                     
-                        <form method="POST" action="{{ url('/proyectos/'. $proyecto->id) }}" accept-charset="UTF-8" role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('proyectos.edit', $proyecto->id) }}" role="form" enctype="multipart/form-data">
                         
                         {{ method_field('PATCH') }}
-                        {{ csrf_field() }} 
-                            
+                        
+                        @csrf
 
                             @include('proyecto.form')
 

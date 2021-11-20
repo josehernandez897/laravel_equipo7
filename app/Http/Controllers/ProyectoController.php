@@ -85,9 +85,7 @@ class ProyectoController extends Controller
      */
     public function edit($id)
     {
-
        // $tblproyecto = tblProyecto::findOrFail($id);
-
         $proyecto = Proyecto::findOrFail($id);
         $categorias= Tblcategorium::pluck('nombre_c','id');
         return view('proyecto.edit', compact('proyecto','categorias'));

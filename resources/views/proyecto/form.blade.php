@@ -17,14 +17,6 @@
             {{ Form::text('descripcion', $proyecto->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
             {!! $errors->first('descripcion', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-
-        <!--
-        <div class="form-group">
-            {{ Form::label('Imgen de Prototipo') }}
-            {{ Form::file('imgpry', $proyecto->imgpry, ['class' => 'form-control' . ($errors->has('imgpry') ? ' is-invalid' : ''), 'placeholder' => 'Imgpry']) }}
-            {!! $errors->first('imgpry', '<div class="invalid-feedback">:message</p>') !!}
-        </div> -->
-
         <div class="form-group">
             {{ Form::label('Presupuesto solicitado:') }}
             {{ Form::number('Cantidad', $proyecto->Cantidad, ['class' => 'form-control' . ($errors->has('Cantidad') ? ' is-invalid' : ''), 'placeholder' => 'cantida $']) }}
