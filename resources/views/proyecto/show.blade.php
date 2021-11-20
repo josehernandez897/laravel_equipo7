@@ -32,6 +32,11 @@
                             <strong>Historia del proyecto:</strong>
                             {{ $proyecto->descripcion }}
                         </div>
+                         
+                        <div class="form-group">
+                            <strong>cantidad solicitada:</strong>
+                            ${{ $proyecto->Cantidad }}
+                        </div>
                         <div class="form-group">
                             <img class="img-fluid" src="{{asset('storage').'/'.$proyecto->imgpry }}" alt="" />
 

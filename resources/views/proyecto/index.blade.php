@@ -44,7 +44,7 @@
                                                     <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p><br>
                                                     <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
                                                    
-                                                    <h1 >cantidad solicitada: $ pendiente jajaj</h1>  
+                                                    <h1 >cantidad solicitada:${{ $proyecto->Cantidad }}</h1>  
                                                     
                                                     <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
                                                         <a class="btn btn-sm btn-primary " href="{{ route('proyectos.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i>Ver Mas</a>

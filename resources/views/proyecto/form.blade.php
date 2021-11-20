@@ -25,6 +25,13 @@
             {!! $errors->first('imgpry', '<div class="invalid-feedback">:message</p>') !!}
         </div> -->
 
+        <div class="form-group">
+            {{ Form::label('Presupuesto solicitado:') }}
+            {{ Form::number('Cantidad', $proyecto->Cantidad, ['class' => 'form-control' . ($errors->has('Cantidad') ? ' is-invalid' : ''), 'placeholder' => 'cantida $']) }}
+            {!! $errors->first('Cantidad', '<div class="invalid-feedback">:message</p>') !!}
+        </div>
+
+
         <div class="form-group {{ $errors->has('imgpry') ? 'has-error' : ''}}">
             <label for="imgpry" class="control-label">{{ 'Imgpry' }}</label>
         
