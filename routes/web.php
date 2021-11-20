@@ -28,5 +28,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::resource('proyecto', App\Http\Controllers\tblProyectoController::class, );
 Route::resource('tbl-proyecto', 'tblProyectoController')->middleware('auth');
-//Route::get('tbl-proyecto', 'tblProyectoController@index');
-//Route::resource('tipo_-comidas', 'Tipo_ComidasController');
+
+Route::resource('tblcategoria', 'TblcategoriumController');
+Route::resource('proyectos', 'ProyectoController');

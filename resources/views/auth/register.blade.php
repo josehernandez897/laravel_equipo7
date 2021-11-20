@@ -13,6 +13,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css1/sb-admin-2.min.css" rel="stylesheet">
+     
 </head>
 <body class="bg-gradient-dark">
 @extends('layouts.app')

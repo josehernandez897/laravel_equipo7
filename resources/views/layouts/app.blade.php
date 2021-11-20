@@ -39,7 +39,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                             <a class="nav-link" href="{{ route('tbl-proyecto.index') }}">{{ __('Proyectos') }}</a>
+                             <a class="nav-link" href="{{ route('proyectos.index') }}">{{ __('Ver Proyectos') }}</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link" href="{{ route('tblcategoria.index') }}">{{ __('Categorias de Proyectos') }}</a>
                         </li>
                          
                     </ul>
