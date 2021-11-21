@@ -1,13 +1,14 @@
 <?php
 
 return [
-    'name' => 'LaravelPWA',
+    'name' => 'Fast Business',
     'manifest' => [
         'name' => env('APP_NAME', 'My PWA App'),
-        'short_name' => 'PWA',
-        'start_url' => '/',
-        'background_color' => '#ffffff',
-        'theme_color' => '#000000',
+        'short_name' => 'Fast',
+        'start_url' => './?utm_source=web_app_manifest',
+        'background_color' => '#2B2B2B',
+        'theme_color' => '#F0DB4F',
+        'scope' => './',
         'display' => 'standalone',
         'orientation'=> 'any',
         'status_bar'=> 'black',
