@@ -6,16 +6,16 @@
 
 @section('content')
     <section class="content container-fluid">
-        <div class="row">
+        <div class="">
             <div class="col-md-12">
-
+ 
                 @includeif('partials.errors')
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Categorias de Proyectos</span>
+                        <span class="card-title">Crear Categoria</span>
                     </div>
-                    <div class="card-body">
+                    <div  >
                         <form method="POST" action="{{ route('tblcategoria.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 

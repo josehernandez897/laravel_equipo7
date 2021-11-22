@@ -15,7 +15,7 @@
     <link href="css1/sb-admin-2.min.css" rel="stylesheet">
      
 </head>
-<body class="bg-gradient-dark">
+<body >
 @extends('layouts.app')
 
 @section('content')

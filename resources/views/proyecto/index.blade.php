@@ -1,6 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 @extends('layouts.app')
 
 @section('template_title')
@@ -44,7 +41,7 @@
                                                     <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p><br>
                                                     <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
                                                    
-                                                    <h1 >cantidad solicitada:${{ $proyecto->Cantidad }}</h1>  
+                                                    <h1>cantidad solicitada:${{ $proyecto->Cantidad }}</h1>  
                                                     
                                                     <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
                                                         <a class="btn btn-sm btn-primary " href="{{ route('proyectos.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i>Ver Mas</a>
@@ -68,6 +65,8 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}"></script>
+
     
 @endsection
 
