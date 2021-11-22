@@ -12,9 +12,7 @@
 
     <!-- aqui empeiza el styles para este template-->
     <link href="vendor1/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css1/sb-admin-2.min.css" rel="stylesheet">
@@ -34,13 +32,15 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background-image:url(./images/iniciosesion.jpg);">
                                  
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Iniciar sesion!</h1>
+                                        <h2 class="h2 text-black-900 mb-4">Bienvenido!</h2>
+                                        <h3 class="h3 text-gray-900 mb-4">Inicio de sesion</h3>
+
                                     </div>
                                     <form class="user" method="POST" action="{{ route('login') }}">
                                         @csrf
