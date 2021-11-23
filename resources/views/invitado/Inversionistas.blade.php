@@ -47,7 +47,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_02.jpg" alt="">
+                <img src="images/team_02.jpg" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -69,7 +69,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_03.jpg" alt="">
+                <img src="images/team_03.jpg" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -91,7 +91,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_04.jpg" alt="">
+                <img src="images/team_04.jpg" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -113,7 +113,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_05.jpg" alt="">
+                <img src="images/team_05.jpg" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -135,7 +135,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="assets/images/team_06.jpg" alt="">
+                <img src="images/team_06.jpg" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
