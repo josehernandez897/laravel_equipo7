@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt dicta dolor quasi error quidem asperiores nam. Consectetur quam, itaque placeat dignissimos dolorum minima quia sequi culpa earum dolorem laboriosam quisquam.</p>
 @stop
 
 @section('css')

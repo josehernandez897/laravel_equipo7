@@ -31,3 +31,8 @@ Route::resource('tbl-proyecto', 'tblProyectoController')->middleware('auth');
 
 Route::resource('tblcategoria', 'TblcategoriumController');
 Route::resource('proyectos', 'ProyectoController');
+Route::resource('invitado', 'invitadoController');
+Route::resource('Inversionistas', 'InversionistasController');
+Route::resource('Mapa', 'MapaController');
+Route::resource('ayuda', 'ayudaController');
+Route::resource('Nosotros', 'NosotrosController');
