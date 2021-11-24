@@ -39,4 +39,9 @@ Route::resource('/', 'ProyectovistaController');
 
 Route::resource('/proyectoG', 'ProyectosGeneralController');
 
- 
+//Route::resource('proyectos', 'ProyectoController');
+Route::resource('invitado', 'invitadoController');
+Route::resource('Inversionistas', 'InversionistasController');
+Route::resource('Mapa', 'MapaController');
+Route::resource('ayuda', 'ayudaController');
+Route::resource('Nosotros', 'NosotrosController');
