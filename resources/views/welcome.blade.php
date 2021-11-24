@@ -16,6 +16,15 @@
   <link href="{{ asset('vendor1/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css1/sb-admin-2.min.css') }}" rel="stylesheet">
 
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+
+<link href="css/style.css" rel="stylesheet">
 </head>
 @extends('layouts.app')
 
@@ -24,17 +33,6 @@ Inicio
 @endsection
 
 @section('content')
-
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/venobox/venobox.css" rel="stylesheet">
-<link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-<link href="vendor/aos/aos.css" rel="stylesheet">
-
-<link href="css/style.css" rel="stylesheet">
-
 
 <body>
   <!-- ======= Hero Section ======= -->
