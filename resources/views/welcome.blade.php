@@ -1,39 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inicio</title>
-            @laravelPWA
-            <!-- Fonts -->
-            <!-- Custom fonts for this template-->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        <!-- Custom styles for this template-->
-        
-        <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.css') }}">
-    <link href="{{ asset('vendor1/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css1/sb-admin-2.min.css') }}" rel="stylesheet">
 
-    </head>
-@extends('layouts.app') 
-    
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  @laravelPWA
+  <!-- Fonts -->
+  <!-- Custom fonts for this template-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <!-- Custom styles for this template-->
+
+  <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.css') }}">
+  <link href="{{ asset('vendor1/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css1/sb-admin-2.min.css') }}" rel="stylesheet">
+
+</head>
+@extends('layouts.app')
+
 @section('template_title')
-    Inicio
+Inicio
 @endsection
 
 @section('content')
 
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="vendor/aos/aos.css" rel="stylesheet">
+<link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="vendor/venobox/venobox.css" rel="stylesheet">
+<link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="vendor/aos/aos.css" rel="stylesheet">
 
-  <link href="css/style.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 
 <body>
@@ -48,42 +48,42 @@
 
   <div>
     <div class="container-fluid">
-        <div >
-            <div >
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <div align="center"> 
-                            @foreach ($proyectos as $proyecto)
-                            <div style="display: inline-flex;">
-                                <div class="card" style="width: 19rem;">
+      <div>
+        <div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <div align="center">
+                @foreach ($proyectos as $proyecto)
+                <div style="display: inline-flex;">
+                  <div class="card" style="width: 19rem;">
 
-                                    <img src="{{asset('storage').'/'.$proyecto->imgpry }}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h3 class="h3 text-black-900 mb-4"> <a href="{{ route('proyectoG.show',$proyecto->id) }}">{{ $proyecto->nombrepry }}</a> </h3>
-                                        <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
-                                        <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p>
-                                        <h6>cantidad solicitada:${{ $proyecto->Cantidad }} MXN</h6> <br>
+                    <img src="{{asset('storage').'/'.$proyecto->imgpry }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h3 class="h3 text-black-900 mb-4"> <a href="{{ route('proyectoG.show',$proyecto->id) }}">{{ $proyecto->nombrepry }}</a> </h3>
+                      <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
+                      <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p>
+                      <h6>cantidad solicitada:${{ $proyecto->Cantidad }} MXN</h6> <br>
 
-                                        <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
-                                            <a class="btn btn-primary btn-user btn-block" style="border-radius: 20px;" href="{{ route('proyectoG.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i>  Ver Proyecto</a>
-                                             @csrf
-                                            
-                                         </form>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                            @endforeach
-                            <br>
-                        </div>
+                      <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
+                        <a class="btn btn-primary btn-user btn-block" style="border-radius: 20px;" href="{{ route('proyectoG.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i> Ver Proyecto</a>
+                        @csrf
+
+                      </form>
                     </div>
+                  </div>
+                  <br>
                 </div>
+                @endforeach
                 <br>
+              </div>
             </div>
-            {!! $proyectos->links() !!}
+          </div>
+          <br>
         </div>
+        {!! $proyectos->links() !!}
+      </div>
     </div>
-</div>
+  </div>
 
 
   <footer id="footer">
@@ -112,14 +112,14 @@
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('proyectos.index')}}">PROYECTOS</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">INICIAR SESION</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('register') }}">REGISTRARSE</a></li>
-              
+
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4></h4>
             <ul>
-              
+
             </ul>
           </div>
 
