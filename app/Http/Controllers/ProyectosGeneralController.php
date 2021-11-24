@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
  * Class ProyectoController
  * @package App\Http\Controllers
  */
-class ProyectoController extends Controller
+class ProyectosGeneralController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,13 +23,9 @@ class ProyectoController extends Controller
      */
     public function index()
     {
-        $usuario=auth()->user()->email;
+        $proyectos = Proyecto::paginate();
 
-        
-       // $proyectos = Proyecto::paginate();
-        $proyectos = Proyecto::where('email_user', '=', "$usuario")->paginate();
-
-        return view('proyecto.index', compact('proyectos'))
+        return view('/proyectoG', compact('proyectos'))
             ->with('i', (request()->input('page', 1) - 1) * $proyectos->perPage());
     }
 
@@ -40,9 +36,7 @@ class ProyectoController extends Controller
      */
     public function create()
     {
-        $proyecto = new Proyecto();
-        $categorias= Tblcategorium::pluck('nombre_c','id');
-        return view('proyecto.create', compact('proyecto','categorias'));
+         
     }
 
     /**
@@ -78,7 +72,7 @@ class ProyectoController extends Controller
     {
         $proyecto = Proyecto::find($id);
 
-        return view('proyecto.show', compact('proyecto'));
+        return view('show', compact('proyecto'));
     }
 
     /**
@@ -89,10 +83,7 @@ class ProyectoController extends Controller
      */
     public function edit($id)
     {
-       // $tblproyecto = tblProyecto::findOrFail($id);
-        $proyecto = Proyecto::findOrFail($id);
-        $categorias= Tblcategorium::pluck('nombre_c','id');
-        return view('proyecto.edit', compact('proyecto','categorias'));
+       
     }
 
     /**
@@ -106,16 +97,7 @@ class ProyectoController extends Controller
     public function update(Request $request, $id)
     {
 
-        $requestData = $request->all();
-        if ($request->hasFile('imgpry')) {
-            $requestData['imgpry'] = $request->file('imgpry')
-                ->store('uploads', 'public');
-        }
-        //request()->validate(Proyecto::$rules);
-       // $proyecto->update($request->all());
-        $proyecto = Proyecto::findOrFail($id);
-        $proyecto->update($requestData);
-        return redirect()->route('proyectos.index')->with('success', 'Proyecto Actualizado successfully');
+        
     }
 
     /**
@@ -124,10 +106,7 @@ class ProyectoController extends Controller
      * @throws \Exception
      */
     public function destroy($id)
-    {
-        $proyecto = Proyecto::find($id)->delete();
+    { 
 
-        return redirect()->route('proyectos.index')
-            ->with('success', 'Proyecto eliminado');
     }
 }

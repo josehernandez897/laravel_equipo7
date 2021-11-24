@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inicio</title>
+        <title>Proyectos</title>
             @laravelPWA
             <!-- Fonts -->
             <!-- Custom fonts for this template-->
@@ -36,8 +36,8 @@
                                     <div class="card-body">
                                         <h3 class="h3 text-black-900 mb-4"> <a href="{{ route('proyectoG.show',$proyecto->id) }}">{{ $proyecto->nombrepry }}</a> </h3>
                                         <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
-                                        <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p>
-                                        <h6>cantidad solicitada:${{ $proyecto->Cantidad }} MXN</h6> <br>
+                                        <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p>  <br>
+                                        <h6>cantidad solicitada:${{ $proyecto->Cantidad }} MXN</h6>  <br>
 
                                         <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
                                             <a class="btn btn-primary btn-user btn-block" style="border-radius: 20px;" href="{{ route('proyectoG.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i>  Ver Proyecto</a>

@@ -14,20 +14,29 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/proyectoG', function () {
+    return view('proyectoG');
 });
 
 Route::get('/offline', function () {
     return view('/resources/views/vendor/laravelpwa/offline.blade.php');
 });
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::resource('proyecto', App\Http\Controllers\tblProyectoController::class, );
-Route::resource('tbl-proyecto', 'tblProyectoController')->middleware('auth');
 
-Route::resource('tblcategoria', 'TblcategoriumController');
-Route::resource('proyectos', 'ProyectoController');
+//Route::resource('proyecto', App\Http\Controllers\tblProyectoController::class, );
+Route::resource('tbl-proyecto', 'tblProyectoController');
+
+Route::resource('tblcategoria', 'TblcategoriumController')->middleware('auth');
+
+Route::resource('proyectos', 'ProyectoController')->middleware('auth');
+
+Route::resource('/', 'ProyectovistaController');
+
+Route::resource('/proyectoG', 'ProyectosGeneralController');
+
+ 

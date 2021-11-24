@@ -3,15 +3,17 @@
 return [
     'name' => 'Fast Business',
     'manifest' => [
-        'name' => env('APP_NAME', 'My PWA App'),
+        //'name' => env('APP_NAME', 'FAST BUSINESS'),
+        'name' => 'FAST BUSINESS',
         'short_name' => 'Fast',
         'start_url' => '/',
         'background_color' => '#2B2B2B',
         'theme_color' => '#F0DB4F',
         'scope' => '/',
         'display' => 'standalone',
-        'orientation'=> 'any',
+        'orientation'=> 'portrait',
         'status_bar'=> 'black',
+        'lang' => 'es-MX',
         'icons' => [
             '72x72' => [
                 'path' => '/images/icons/icon-72x72.png',

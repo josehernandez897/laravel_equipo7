@@ -1,73 +1,70 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+<!-- aqui empeiza el styles para este template-->
+<link href="vendor1/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="css1/sb-admin-2.min.css" rel="stylesheet">
+ 
 @extends('layouts.app')
 
 @section('template_title')
-    Proyecto
+Proyecto
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+<div class="container-fluid">
+    <div class="">
+        <div class="">
+            <div class="float-right">
+                <a href="{{ route('proyectos.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
+                    {{ __('Empieza Un Proyecto') }}
+                </a>
+            </div>
+            <div >
 
-                            <span id="card_title">
-                                {{ __('Proyecto disponibles') }}
-                            </span>
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+                @endif
 
-                             <div class="float-right">
-                                <a href="{{ route('proyectos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Empieza Un Proyecto') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div>
+                            @foreach ($proyectos as $proyecto)
+                            <div style="display: inline-flex;">
+                                <div class="card" style="width: 22rem;">
+                                    <img src="{{asset('storage').'/'.$proyecto->imgpry }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h3 class="h3 text-black-900 mb-4"> <a href="{{ route('proyectos.show',$proyecto->id) }}">{{ $proyecto->nombrepry }}</a> </h3>
+                                        <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p> 
+                                        <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p><br>
+                                        <h6>cantidad solicitada:${{ $proyecto->Cantidad }} MXN</h6><br>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                    @foreach ($proyectos as $proyecto)
-                                        <div>
-                                            <div class="card" style="width: 18rem;">
-                                                <img src="{{asset('storage').'/'.$proyecto->imgpry }}" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <h1 >{{ $proyecto->nombrepry }}</h1>  
-                                                    <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p><br>
-                                                    <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
-                                                   
-                                                    <h1>cantidad solicitada:${{ $proyecto->Cantidad }}</h1>  
-                                                    
-                                                    <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
-                                                        <a class="btn btn-sm btn-primary " href="{{ route('proyectos.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i>Ver Mas</a>
-                                                        <a class="btn btn-sm btn-success" href="{{ route('proyectos.edit',$proyecto->id) }}"><i class="fa fa-fw fa-edit"></i> Editar infromacion</a>
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <br>
-                                        </div>
-    
-                                    @endforeach
-                                
-                            </table>
+                                        <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
+                                            <a class="btn btn-sm btn-primary " href="{{ route('proyectos.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i>Ver Mas</a>
+                                            <a class="btn btn-sm btn-success" href="{{ route('proyectos.edit',$proyecto->id) }}"><i class="fa fa-fw fa-edit"></i> Editar infromacion</a>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
-                {!! $proyectos->links() !!}
             </div>
+            {!! $proyectos->links() !!}
         </div>
     </div>
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}"></script>
+</div>
+<script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}"></script>
 
-    
+
 @endsection
-
- 

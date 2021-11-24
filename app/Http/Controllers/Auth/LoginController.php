@@ -39,9 +39,12 @@ class LoginController extends Controller
     }
 
     public function redirectPath(){
-        if (Auth()->user()->tipo_usuario) {
-            return 'tbl-proyecto';
+        if (Auth()->user()->tipo_usuario == 1) {
+            return 'tblcategoria';
         }
-        return '/home';
+        elseif(Auth()->user()->tipo_usuario == 0){
+            return '/proyectos';
+        }
+        
     }
 }
