@@ -8,7 +8,6 @@
 
   
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/templatemo-sixteen.css">
     <link rel="stylesheet" href="css/owl.css">
@@ -51,6 +50,7 @@
         </div>
       </div>
     </div>
+
     <div class="call-to-action">
       <div class="container">
         <div class="row">
@@ -162,14 +162,15 @@
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>FAST BUSINESS. &copy; 2020 FAST BUSINESS.., Ltd.
+              <p>FAST BUSINESS. &copy; 2020 FAST BUSINESS.
             </p>
             </div>
           </div>
         </div>
       </div>
     </footer>
-    <!-- Bootstrap core JavaScript -->
+
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
