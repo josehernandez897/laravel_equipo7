@@ -27,63 +27,68 @@
 <link href="css/style.css" rel="stylesheet">
 </head>
 @extends('layouts.app')
-
-@section('template_title')
-Inicio
+        
+    
+    @section('template_title')
+    Inicio
 @endsection
 
-@section('content')
+     
+
+
 
 <body>
+
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="300">
       <h1>¡ HAZ CRECER TU NEGOCIO !</h1>
       <a href="{{ route('login') }}" class="btn-get-started scrollto">Comencemos</a>
     </div>
-  </section>
-
+  </section><!-- End Hero -->
 
   <div>
     <div class="container-fluid">
-      <div>
-        <div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <div align="center">
-                @foreach ($proyectos as $proyecto)
-                <div style="display: inline-flex;">
-                  <div class="card" style="width: 19rem;">
+        <div >
+            <div >
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div align="center"> 
+                            @foreach ($proyectos as $proyecto)
+                            <div style="display: inline-flex;">
+                                <div class="card" style="width: 19rem;">
 
-                    <img src="{{asset('storage').'/'.$proyecto->imgpry }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h3 class="h3 text-black-900 mb-4"> <a href="{{ route('proyectoG.show',$proyecto->id) }}">{{ $proyecto->nombrepry }}</a> </h3>
-                      <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
-                      <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p>
-                      <h6>cantidad solicitada:${{ $proyecto->Cantidad }} MXN</h6> <br>
+                                    <img src="{{asset('storage').'/'.$proyecto->imgpry }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h3 class="h3 text-black-900 mb-4"> <a href="{{ route('proyectoG.show',$proyecto->id) }}">{{ $proyecto->nombrepry }}</a> </h3>
+                                        <p class="card-text" style="-webkit-line-clamp: 2;">{{ $proyecto->descripcion }}</p><br>
+                                        <p class="card-text">Categoria: {{ $proyecto->tblcategorium->nombre_c }}</p>
+                                        <h6>cantidad solicitada:${{ $proyecto->Cantidad }} MXN</h6> <br>
 
-                      <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
-                        <a class="btn btn-primary btn-user btn-block" style="border-radius: 20px;" href="{{ route('proyectoG.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i> Ver Proyecto</a>
-                        @csrf
-
-                      </form>
+                                        <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
+                                            <a class="btn btn-primary btn-user btn-block" style="border-radius: 20px;" href="{{ route('proyectoG.show',$proyecto->id) }}"><i class="fa fa-fw fa-eye"></i>  Ver Proyecto</a>
+                                             @csrf
+                                            
+                                         </form>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            @endforeach
+                            <br>
+                        </div>
                     </div>
-                  </div>
-                  <br>
                 </div>
-                @endforeach
-                <br>
-              </div>
             </div>
-          </div>
-          <br>
+            {!! $proyectos->links() !!}
         </div>
-        {!! $proyectos->links() !!}
-      </div>
     </div>
-  </div>
+</div>
+<script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}"></script>
 
 
+  <!-- ======= Footer ======= -->
   <footer id="footer">
 
     <div class="footer-top">
@@ -110,14 +115,14 @@ Inicio
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('proyectos.index')}}">PROYECTOS</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">INICIAR SESION</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('register') }}">REGISTRARSE</a></li>
-
+              
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4></h4>
             <ul>
-
+              
             </ul>
           </div>
 
@@ -149,4 +154,7 @@ Inicio
   <script src="vendor/aos/aos.js"></script>
   <script src="js/main.js"></script>
 
-</html>
+</body>
+
+@endsection
+
