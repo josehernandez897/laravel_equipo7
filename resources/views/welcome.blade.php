@@ -1,28 +1,43 @@
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inicio</title>
-            @laravelPWA
-            <!-- Fonts -->
-            <!-- Custom fonts for this template-->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        <!-- Custom styles for this template-->
+@extends('layouts.app')
         
-        <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.css') }}">
+    
+    @section('template_title')
+    Inicio
+@endsection
+
+     
+
+
+
+    
+
+@section('content')
+<link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.css') }}">
     <link href="{{ asset('vendor1/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css1/sb-admin-2.min.css') }}" rel="stylesheet">
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
 
-    </head>
+  <link href="css/style.css" rel="stylesheet">
+
+
 <body>
-    <!--style="background-image:url(/images/welcome1.jpg);background-size: cover;" hasta aqui nos quedamos-->
-    @extends('layouts.app')
-     
-    @section('content')
-<div>
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="300">
+      <h1>¡ HAZ CRECER TU NEGOCIO !</h1>
+      <a href="{{ route('login') }}" class="btn-get-started scrollto">Comencemos</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <div>
     <div class="container-fluid">
         <div >
             <div >
@@ -60,40 +75,6 @@
     </div>
 </div>
 <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}"></script>
-@endsection
-</body>
-</html>
-=======
-@extends('layouts.app') 
-    
-@section('template_title')
-    Inicio
-@endsection
-
-@section('content')
-
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="vendor/aos/aos.css" rel="stylesheet">
-
-  <link href="css/style.css" rel="stylesheet">
-
-
-<body>
-
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="300">
-      <h1>¡ HAZ CRECER TU NEGOCIO !</h1>
-      <a href="{{ route('login') }}" class="btn-get-started scrollto">Comencemos</a>
-    </div>
-  </section><!-- End Hero -->
-
 
 
   <!-- ======= Footer ======= -->
@@ -164,9 +145,5 @@
 
 </body>
 
-<<<<<<< HEAD
 @endsection
- 
-=======
-@endsection
->>>>>>> 768f881ddae576608f60bccf09043c525e26240e
+
