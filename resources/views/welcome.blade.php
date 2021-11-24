@@ -17,12 +17,36 @@
     <link href="{{ asset('css1/sb-admin-2.min.css') }}" rel="stylesheet">
 
     </head>
+@extends('layouts.app') 
+    
+@section('template_title')
+    Inicio
+@endsection
+
+@section('content')
+
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
+
+
 <body>
-    <!--style="background-image:url(/images/welcome1.jpg);background-size: cover;" hasta aqui nos quedamos-->
-    @extends('layouts.app')
-     
-    @section('content')
-<div>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="300">
+      <h1>¡ HAZ CRECER TU NEGOCIO !</h1>
+      <a href="{{ route('login') }}" class="btn-get-started scrollto">Comencemos</a>
+    </div>
+  </section>
+
+
+  <div>
     <div class="container-fluid">
         <div >
             <div >
@@ -54,49 +78,14 @@
                         </div>
                     </div>
                 </div>
+                <br>
             </div>
             {!! $proyectos->links() !!}
         </div>
     </div>
 </div>
-<script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}"></script>
-@endsection
-</body>
-</html>
-=======
-@extends('layouts.app') 
-    
-@section('template_title')
-    Inicio
-@endsection
-
-@section('content')
-
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="vendor/aos/aos.css" rel="stylesheet">
-
-  <link href="css/style.css" rel="stylesheet">
 
 
-<body>
-
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="300">
-      <h1>¡ HAZ CRECER TU NEGOCIO !</h1>
-      <a href="{{ route('login') }}" class="btn-get-started scrollto">Comencemos</a>
-    </div>
-  </section><!-- End Hero -->
-
-
-
-  <!-- ======= Footer ======= -->
   <footer id="footer">
 
     <div class="footer-top">
@@ -162,11 +151,4 @@
   <script src="vendor/aos/aos.js"></script>
   <script src="js/main.js"></script>
 
-</body>
-
-<<<<<<< HEAD
-@endsection
- 
-=======
-@endsection
->>>>>>> 768f881ddae576608f60bccf09043c525e26240e
+</html>
