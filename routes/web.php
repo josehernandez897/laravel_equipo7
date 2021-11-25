@@ -37,7 +37,7 @@ Route::resource('proyectos', 'ProyectoController')->middleware('auth');
 
 Route::resource('/', 'ProyectovistaController');
 
-Route::resource('/proyectoG', 'ProyectosGeneralController');
+Route::resource('/proyectoG', 'ProyectosGeneralController')->middleware('auth');;
 
 //Route::resource('proyectos', 'ProyectoController');
 Route::resource('invitado', 'invitadoController');
