@@ -222,9 +222,5 @@ Route::group(['prefix'=>'dashboard', 'middleware' => 'auth'], function() {
 
 
 
-<<<<<<< HEAD
-=======
-Route::resource('/proyectoG', 'ProyectosGeneralController')->middleware('auth');;
->>>>>>> 67526b696f36582527eef7d1874c19768ad537f1
 
 });
