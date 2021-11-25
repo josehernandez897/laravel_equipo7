@@ -1,149 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SingUp</title>
-    <!-- Custom fonts for this template-->
-    <link href="vendor1/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="css1/sb-admin-2.min.css" rel="stylesheet">
-     
-</head>
-<body >
 @extends('layouts.app')
 
 @section('content')
+    <section class="auth-form">
 
- 
-<div class="container">
-
-    <div class="card o-hidden border-0 shadow-lg my-5">
-        <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
+        <div class="container">
             <div class="row">
-                <div class="col-lg-5 d-none d-lg-block bg-register-image" style="background-image:url(./images/registro.jpg);"></div>
-                <div class="col-lg-6">
-                    <div class="p-5">
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Crear una  Cuenta!</h1>
-                        </div>
-                        
-                        <form class="user" method="POST" action="{{ route('register') }}">
-                                @csrf
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">@lang('app.register')</div>
+                        <div class="panel-body">
 
-                                <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del usuario') }}</label>
+                            @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{session('error')}}
+                                </div>
+                            @endif
+
+                            <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                                {{ csrf_field() }}
+
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <label for="name" class="col-md-4 control-label">@lang('app.name')</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control form-control-user @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                        @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label for="email" class="col-md-4 control-label">@lang('app.email_address')</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
 
-                            
-
-                                <div class="form-group row">
-                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de la empresa') }}</label>
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                    <label for="password" class="col-md-4 control-label">@lang('app.password')</label>
 
                                     <div class="col-md-6">
-                                        <input id="vch_empresa" type="text" class="form-control form-control-user" name="vch_empresa" required>
+                                        <input id="password" type="password" class="form-control" name="password" required>
+
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('RFC de la empresa') }}</label>
+                                <div class="form-group">
+                                    <label for="password-confirm" class="col-md-4 control-label">@lang('app.confirm_password')</label>
 
                                     <div class="col-md-6">
-                                        <input id="vch_rfc" type="text" class="form-control form-control-user" name="vch_rfc" required >
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Clave interbancaria') }}</label>
-
-                                    <div class="col-md-6">
-                                        <input id="vch_clabe" type="number" class="form-control form-control-user" name="vch_clabe" required>
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Crea una Contraseña') }}</label>
 
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Repetir constraseña') }}</label>
-
-                                    <div class="col-md-6">
-                                        <input id="password-confirm" type="password" class="form-control form-control-user" name="password_confirmation" required autocomplete="new-password">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6 offset-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember"  required {{ old('remember') ? 'checked' : '' }}>
-                                            <a class="btn btn-link " href="{{ route('password.request') }}">
-                                                {{ __('Aviso de privacidad') }}
-                                            </a>
+                                @if(get_option('enable_recaptcha_registration') == 1)
+                                    <div class="form-group {{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                                        <div class="col-md-6 col-md-offset-4">
+                                            <div class="g-recaptcha" data-sitekey="{{get_option('recaptcha_site_key')}}"></div>
+                                            @if ($errors->has('g-recaptcha-response'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
-                                </div>
+                                @endif
 
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            {{ __('Enviar') }}
+
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            @lang('app.register')
                                         </button>
                                     </div>
                                 </div>
-                         
-                        <hr>
-                         
-                        <div class="text-center">
-                            <a class="small" href="{{ route('login') }}">Ya tiene cuenta? Login!</a>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection
- 
-<!-- Bootstrap core JavaScript-->
 
- 
-
-</body>
-</html>
+@if(get_option('enable_recaptcha_registration') == 1)
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+@endif

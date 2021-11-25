@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -25,11 +25,44 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        if (get_option('enable_recaptcha_registration') == 1){
+            $this->validate($request, array('g-recaptcha-response' => 'required'));
+
+            $secret = get_option('recaptcha_secret_key');
+            $gRecaptchaResponse = $request->input('g-recaptcha-response');
+            $remoteIp = $request->ip();
+
+            $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+            $resp = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
+            if ( ! $resp->isSuccess()) {
+                return redirect()->back()->with('error', 'reCAPTCHA is not verified');
+            }
+
+        }
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
+    }
+
+    /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -50,12 +83,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'vch_clabe' => ['required', 'string', 'max:255'],
-            'vch_rfc' => ['required', 'string', 'max:255'],
-            'vch_empresa' => ['required', 'string', 'max:255'],
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
         ]);
     }
 
@@ -63,22 +93,16 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return User
      */
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'vch_clabe' => $data['vch_clabe'],
-            'vch_rfc' => $data['vch_rfc'],
-            'vch_empresa' => $data['vch_empresa'],
+            'password' => bcrypt($data['password']),
+            'user_type' => 'user',
+            'active_status' => 1
         ]);
     }
-
-    
- 
-
-
 }
