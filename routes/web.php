@@ -224,3 +224,4 @@ Route::group(['prefix'=>'dashboard', 'middleware' => 'auth'], function() {
 
 
 });
+\PWA::routes();
