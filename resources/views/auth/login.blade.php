@@ -1,119 +1,103 @@
 @extends('layouts.app')
 
 @section('content')
+<br><br><br>
 
-    <section class="auth-form">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">@lang('app.login_desc')</div>
-                        <div class="panel-body">
-
-                            @include('admin.flash_msg')
+<!-- Custom styles for this template-->
 
 
-                            @if(get_option('enable_social_login') == 1)
-                                <div class="row row-sm-offset-3">
+<div class="container">
+    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap-theme.css') }}" rel="stylesheet">
+    <!-- Font awesome 4.4.0 -->
+    <link rel="stylesheet" href="{{ asset('assets/font-awesome-4.4.0/css/font-awesome.min.css') }}">
+    <!-- load page specific css -->
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
 
-                                    @if(get_option('enable_facebook_login') == 1)
-                                        <div class="col-xs-6">
-                                            <a href="{{ route('facebook_redirect') }}" class="btn btn-lg btn-block btn-facebook">
-                                                <i class="fa fa-facebook visible-xs"></i>
-                                                <span class="hidden-xs"><i class="fa fa-facebook-square"></i> Facebook</span>
-                                            </a>
-                                        </div>
-                                    @endif
+        <div class="col-xl-10 col-lg-12 col-md-9">
 
-                                    @if(get_option('enable_google_login') == 1)
-                                        <div class="col-xs-6">
-                                            <a href="{{ route('google_redirect') }}" class="btn btn-lg btn-block btn-google">
-                                                <i class="fa fa-google-plus visible-xs"></i>
-                                                <span class="hidden-xs"><i class="fa fa-google-plus-square"></i> Google+</span>
-                                            </a>
-                                        </div>
-                                    @endif
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div style="background-image:url(./images/iniciosesion.jpg);" style="flex: none;">
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h2 class="h2 text-black-900 mb-4">¡Bienvenido a Fast Business!</h2>
+                                    <h3 class="h3 text-gray-900 mb-4">Inicio de sesion</h3>
 
                                 </div>
-                                <hr />
-                            @endif
+                                <form class="user" role="form" method="POST" action="{{ route('login') }}">
+                                    {{ csrf_field() }}
 
-                            <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-                                {{ csrf_field() }}
+                                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="email" class="col-md-4 control-label">@lang('app.email_address')</label>
 
-                                    <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                        <input id="email" style="border-radius: 20px;" type="email" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Ingresa tu Email Address..." name="email" value="{{ old('email') }}" required autofocus>
 
                                         @if ($errors->has('email'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
                                         @endif
+
                                     </div>
-                                </div>
 
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="password" class="col-md-4 control-label">@lang('app.password')</label>
-
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control" name="password" required>
+                                    <div class="form-group">
+                                        <input id="password" style="border-radius: 20px;" type="password" class="form-control form-control-user" placeholder="Password" required autocomplete="current-password" name="password">
 
                                         @if ($errors->has('password'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
                                         @endif
                                     </div>
-                                </div>
 
-                                @if(get_option('enable_recaptcha_login') == 1)
-                                    <div class="form-group {{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                                        <div class="col-md-6 col-md-offset-4">
-                                            <div class="g-recaptcha" data-sitekey="{{get_option('recaptcha_site_key')}}"></div>
-                                            @if ($errors->has('g-recaptcha-response'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                                </span>
-                                            @endif
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6 offset-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                <th></th>
+                                                <th></th>
+
+                                                <label class="form-check-label" for="remember">
+                                                    {{ __('Remember Me') }}
+                                                </label>
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
+                                    </div>                                        
+                                            <button type="submit" style="border-radius: 20px;background: #113CFC;" class="btn btn-primary btn-user btn-block">
+                                                Iniciar sesion
+                                            </button>      
+                                </form>
 
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> @lang('app.remember_me')
-                                            </label>
-                                        </div>
-                                    </div>
+                                <hr>
+                                <div class="text-center">
+                                    @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        Olvidaste tu contraseña?
+                                    </a>
+                                    @endif
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-8 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            @lang('app.login')
-                                        </button>
-
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            @lang('app.forgot_your_password')
-                                        </a>
-                                    </div>
+                                <div class="text-center">
+                                    <a class="small" href="{{ route('register') }}">Crear una Cuenta!</a>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-@endsection
 
-@section('page-js')
-    @if(get_option('enable_recaptcha_login') == 1)
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-    @endif
+        </div>
+
+    </div>
+
+</div>
+
+
 @endsection
