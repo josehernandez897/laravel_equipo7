@@ -45,18 +45,7 @@
 
     <hr />
 
-    <div class="socialShareWrap">
-        <ul>
-            <li><a href="#" class="share s_facebook"><i class="fa fa-facebook-square"></i> </a> </li>
-            <li><a href="#" class="share s_twitter"><i class="fa fa-twitter-square"></i> </a> </li>
-            <li><a href="#" class="share s_plus"><i class="fa fa-google-plus-square"></i> </a> </li>
-            <li><a href="#" class="share s_linkedin"><i class="fa fa-linkedin-square"></i> </a> </li>
-            <li><a href="#" class="share s_vk"><i class="fa fa-vk"></i> </a> </li>
-            <li><a href="#" class="share s_pinterest"><i class="fa fa-pinterest-square"></i> </a> </li>
-            <li><a href="#" class="share s_tumblr"><i class="fa fa-tumblr-square"></i> </a> </li>
-            <li><a href="#" class="share s_delicious"><i class="fa fa-delicious"></i> </a> </li>
-        </ul>
-    </div>
+  
 
     @php
         $is_ended = $campaign->is_ended();
