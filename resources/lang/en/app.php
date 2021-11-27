@@ -34,8 +34,8 @@ return [
     'max_amount' => 'Cantidad máxima',
     'min_amount' => 'Cantidad mínima',
     'goal' => 'Meta',
-    'amount_pre fill' => 'Importe precargado',
-    'amount_preinated_info_text' =>
+    'amount_prefilled' => 'Importe precargado',
+    'amount_prefilled_info_text' =>
         'Ayudará a llenar el cuadro de cantidad haciendo clic, coloque cada cantidad por coma, ej: 10,20,30,40',
     'video' => 'Video',
     'video_info_text' => 'Colocar URL de video de YouTube o vimeo',
@@ -134,7 +134,7 @@ return [
     'backer_name' => 'Nombre del patrocinador',
     'no_contribute' => 'Nadie ha contribuido hasta ahora',
     'no_update' => 'No hay ninguna actualización disponible',
-    'accept_terms_policy' =>
+    'agree_terms_policy' =>
         'También reconoce y acepta los Términos de uso y la Política de privacidad.',
     'pay_with_paypal' => 'Pagar con PayPal',
     'payment_success' => 'Pago exitoso',
@@ -166,7 +166,7 @@ return [
     'no_more_results' => 'No hay más resultados',
     'campaigns' => 'Campañas',
     'raise_percent' => 'Porcentaje aumentado',
-    'raise' => 'Elevado',
+    'raised' => 'Elevado',
     'owner_info' => 'Información del propietario',
     'actions' => 'Acciones',
     'name_in_profile' => 'Nombre en el perfil',
@@ -177,7 +177,7 @@ return [
     'mark_as_funded' => 'Marcar como financiado',
     'aprobar' => 'Aprobar',
     'block' => 'Bloque',
-    'recent_funded_campaigns' => 'Campañas financiadas recientemente',
+    'recently_funded_campaigns' => 'Campañas financiadas recientemente',
     'search' => 'Buscar',
     'campaign_title_keyword' => 'Palabra clave del título de la campaña',
     'add_staff_picks' => 'Agregar selecciones de personal',
@@ -202,7 +202,7 @@ return [
     'staff_picks' => 'Selección de personal',
     'last_pending_campaigns' => 'Últimas 10 campañas pendientes',
     'last_ten_payment' => 'Últimos 10 pagos de patrocinadores',
-    'por' => 'Por',
+    'by' => 'Por',
 
     'name' => 'Nombre',
     'user_name' => 'Nombre de usuario',
@@ -227,11 +227,11 @@ return [
     'password_changed_msg' => 'La contraseña se ha cambiado correctamente',
     'wrong_old_password' => 'Contraseña antigua incorrecta',
     'banner_main_header' =>
-        'Una plataforma profesional de crowdfunding de Laravel',
+        'Da inicio a todos tus sueños',
     'banner_sub_header' =>
-        'Cree su propia plataforma de recaudación de fondos profesional de clase mundial en 5 minutos',
-    'support_campaigns' => 'Campañas de apoyo',
-    'start_crowdfunding' => 'Iniciar Crowdfunding',
+        'comencemos la aventura',
+    'support_campaigns' => 'ver Proyectos',
+    'start_crowdfunding' => 'crear un proyecto',
     'why_choose_us' => 'Por qué elegirnos',
     'explore_categories' => 'Explorar categorías',
     'secure' => 'Seguro',
@@ -329,7 +329,7 @@ return [
     'platform_owner_commission' => 'Comisión del propietario de la plataforma',
     'you_will_get' => 'Obtendrás',
     'of_total_raised' => 'del total recaudado',
-    'retirar' => 'Retirar',
+    'withdraw' => 'Retirar',
     'your_commission' => 'Tu comisión',
     'campaign_has_been_ended' =>
         'Esta campaña ha alcanzado su objetivo o la fecha de finalización ha caducado o su propietario ha detenido la campaña',
@@ -363,7 +363,7 @@ return [
     'enable_bank_transfer' => 'Habilitar transferencia bancaria',
     'bank_payment_instruction' =>
         'Realice su pago directamente a nuestra cuenta bancaria. Confirmaremos su pago después de que los fondos se hayan liquidado en nuestra cuenta. ',
-    'pendiente_pagos' => 'Pagos pendientes',
+    'pending_payments' => 'Pagos pendientes',
     'bank_transfer_information' => 'Información de transferencia bancaria',
     'mark_as_success' => 'Marcar como exitoso',
     'payment_status_changed' => 'Se ha cambiado el estado del pago',
@@ -382,7 +382,7 @@ return [
      */
 
     'went_your_password' => '¿Olvidó su contraseña?',
-    'Remember_me' => 'Recuérdame',
+    'remember_me' => 'Recuérdame',
     're_captcha_settings' => 'Configuración de reCAPTCHA',
     'get_reacaptcha_from' => 'Obtén tu clave reCAPTCHA de',
     'enable_recaptcha_login' =>
@@ -413,7 +413,7 @@ return [
     'delete' => 'Eliminar',
     'there_is_no_user' => 'No hay usuarios',
     'total_users_found' => 'Total de usuarios encontrados',
-    'contribuido' => 'Contribuido',
+    'contributed' => 'Contribuido',
     'not_found_404' =>
         '¡Lo siento! La página que está buscando no existe en nuestro servidor ',
     'user_account_wrong' =>
@@ -432,9 +432,9 @@ return [
     'left' => 'Izquierda',
     'right' => 'Derecha',
     'running' => 'Corriendo',
-    'retiro_preferencia' => 'Preferencia de retiro',
+    'withdrawal_preference' => 'Preferencia de retiro',
     'default_withdrawal_account' => 'Cuenta de retiro predeterminada',
-    'banco' => 'Banco',
+    'bank' => 'Banco',
     'paypal_email' => 'Correo electrónico de Paypal',
     'update' => 'Actualizar',
     'bank_account_holders_name' => 'Nombre del titular de la cuenta bancaria',
@@ -455,10 +455,10 @@ return [
     'all_withdrawals' => 'Todos los retiros',
     'campaign' => 'Campaña',
     'date' => 'Fecha',
-    'retiro_requests' => 'Solicitudes de retiro',
+    'withdrawal_requests'  => 'Solicitudes de retiro',
     'required_by' => 'Solicitado por',
     'declive' => 'Rechazar',
-    'retiro_request_status_changed' =>
+    'withdrawal_request_status_changed' =>
         'Se ha cambiado el estado de la solicitud de retiro',
     'copy_link' => 'Copiar enlace',
     'campaign_url_copied' => 'Se ha copiado la URL de la campaña',
