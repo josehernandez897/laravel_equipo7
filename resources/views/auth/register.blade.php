@@ -5,8 +5,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
+                <div class="col-md-12 col-md-offset-2">
+                    <div class="col-xl-10 col-lg-12 col-md-9">
                         <div class="panel-heading">@lang('app.register')</div>
                         <div class="panel-body">
 
@@ -16,14 +16,17 @@
                                 </div>
                             @endif
 
-                            <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+
+
+
+                            <form class="user" role="form" method="POST" action="{{ route('register') }}">
                                 {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label for="name" class="col-md-4 control-label">@lang('app.name')</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                        <input id="name" type="text" class="form-control form-control-user" name="name" value="{{ old('name') }}" required autofocus>
 
                                         @if ($errors->has('name'))
                                             <span class="help-block">
@@ -37,7 +40,7 @@
                                     <label for="email" class="col-md-4 control-label">@lang('app.email_address')</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                        <input id="email" type="email"  class="form-control form-control-user" name="email" value="{{ old('email') }}" required>
 
                                         @if ($errors->has('email'))
                                             <span class="help-block">
@@ -51,7 +54,7 @@
                                     <label for="password" class="col-md-4 control-label">@lang('app.password')</label>
 
                                     <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control" name="password" required>
+                                        <input id="password" type="password" class="form-control form-control-user" name="password" required>
 
                                         @if ($errors->has('password'))
                                             <span class="help-block">
@@ -65,7 +68,7 @@
                                     <label for="password-confirm" class="col-md-4 control-label">@lang('app.confirm_password')</label>
 
                                     <div class="col-md-6">
-                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                        <input id="password-confirm" type="password" class="form-control form-control-user" name="password_confirmation" required>
                                     </div>
                                 </div>
 
@@ -92,6 +95,8 @@
                                     </div>
                                 </div>
                             </form>
+
+
                         </div>
                     </div>
                 </div>
