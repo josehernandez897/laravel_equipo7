@@ -4,7 +4,7 @@
 <br><br><br>
 
 <style>
-    ddd.{
+    ddd:{
         border-radius: 5px;
         border-color: gray;
         box-shadow: gray;
@@ -27,15 +27,16 @@
                     <div class="panel-body">
                         <!-- Nested Row within Card Body -->
                         <div>
-                            <div class="col-lg-7 d-none d-lg-block bg-login-image" style="background-image:url(./images/iniciosesion.jpg);">
+                            <div class="col-lg-7 d-none d-lg-block bg-login-image" style="background-image:url(./images/123.jpg);border-radius: 5px;box-shadow: 2px 2px 5px #999;">
 
 
-                            <div class="col-lg-12" style="border-radius: 5px;box-shadow: 2px 2px 5px #999;">
+                            <div class="col-lg-12" >
                                 <div class="p-" >
+                                    <br>
                                     <div class="text-center">
-                                        <h2 class="h2 text-black-900 mb-4" style="font-weight: bold;color: #3DB2FF;">¡Bienvenido a Fast Business!</h2>
-                                        <h3 class="h3 text-gray-900 mb-4">Inicio de sesion</h3>
-                                    </div>
+                                        <br>
+                                        <h2 class="h2 text-black-900 mb-4" style="font-weight: bold;color: black;">¡Bienvenido a Fast Business!</h2>
+                                     </div>
                                     <br>
                                     <form class="user" role="form" method="POST" action="{{ route('login') }}">
                                         {{ csrf_field() }}
