@@ -62,38 +62,7 @@
 
 <body>
 
-@if (config('app.is_demo'))
 
-    <div class="demoLinkWrap" style="background: #333333; padding: 10px 0">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <center>
-                        <a href="https://codecanyon.net/item/getfund-a-professional-laravel-crowdfunding-platform/19769953?ref=themeqx"
-                            class="btn btn-primary" target="_blank"><i class="fa fa-shopping-cart"></i> Buy Now </a>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </div>
-
-@endif
-
-
-@if (!request()->cookie('accept_cookie'))
-    <div class="alert alert-warning text-center cookie-notice"
-        style="font-size: 16px; margin: 0; line-height: 25px;">
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>{!! get_option('cookie_message') !!}</p>
-                    <a href="#" class="cookie-ok-btn btn btn-primary">Ok</a>
-                    <a href="{!! get_post_url(get_option('cookie_learn_page')) !!}">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-@endif
 
 
 <div class="top-navbar">

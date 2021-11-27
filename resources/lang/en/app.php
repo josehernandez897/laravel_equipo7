@@ -1,7 +1,7 @@
 <?php
 /**
  * Main language file
- * @package GetFund - Laravel Crowdfunding Platform
+ * @package GetFund fastbusines
  */
 
 return [
@@ -146,7 +146,7 @@ return [
     'see_all' => 'Ver todo',
     'find_campaign_fund_them' =>
         'Encuentra campañas por categorías y financia las que más te gusten.',
-    'campaign_in' => 'Campañas en',
+    'campaigns_in' => 'Campañas en',
     'no_campaigns_to_display' => 'No hay campañas para mostrar',
     'login' => 'Iniciar sesión',
     'register' => 'Registrarse',
