@@ -71,7 +71,7 @@ a.top-start-btn:hover{
 }
 .main-banner::before {
     content: "";
-    background: rgba(0, 0, 0, 0) radial-gradient(at center bottom , #0096d6 12%, #00328f) repeat scroll 0 0;
+    background: rgba(27, 25, 25, 0.733) radial-gradient(at center bottom , #420a70 12%, #000000) repeat scroll 0 0;
     height: 100%;
     left: 0;
     opacity: 0.7;

@@ -14,7 +14,6 @@
                 <ul class="nav nav-second-level">
                     <li>  <a href="{{route('my_campaigns')}}">@lang('app.my_campaigns')</a> </li>
                     <li>  <a href="{{route('start_campaign')}}">@lang('app.start_a_campaign')</a> </li>
-                    <li>  <a href="{{route('my_pending_campaigns')}}">@lang('app.pending_campaigns')</a> </li>
                 </ul>
             </li>
 
@@ -33,19 +32,6 @@
                     <!-- /.nav-second-level -->
                 </li>
 
-                <li>
-                    <a href="#"><i class="fa fa-wrench fa-fw"></i> @lang('app.settings')<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li> <a href="{{ route('general_settings') }}">@lang('app.general_settings')</a> </li>
-                        <li> <a href="{{ route('payment_settings') }}">@lang('app.payment_settings')</a> </li>
-                        <li> <a href="{{ route('theme_settings') }}">@lang('app.theme_settings')</a> </li>
-                        <li> <a href="{{ route('social_settings') }}">@lang('app.social_settings')</a> </li>
-                        <li> <a href="{{ route('re_captcha_settings') }}">@lang('app.re_captcha_settings')</a> </li>
-                        <li> <a href="{{ route('other_settings') }}">@lang('app.other_settings')</a> </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li> <a href="{{ route('pages') }}"><i class="fa fa-file-word-o"></i> @lang('app.pages')</a>  </li>
 
                 <li> <a href="{{route('users')}}"><i class="fa fa-users"></i> @lang('app.users')</a>  </li>
                 <li> <a href="{{route('withdrawal_requests')}}"><i class="fa fa-balance-scale"></i> @lang('app.withdrawal_requests')</a>  </li>
@@ -60,6 +46,5 @@
     </div>
     <!-- /.sidebar-collapse -->
 
-    <p class="poweredby-text">GetFund <code>v.{{config('app.app_version')}}</code>, by <a href="https://themeqx.com" target="_blank">Themeqx</a> </p>
 
 </div>

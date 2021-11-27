@@ -100,36 +100,6 @@
     </div>
 
 
-    @if($campaign->rewards->count() > 0)
-        <div class="rewards-wrap">
 
-            <h2>@lang('app.or_choose_a_reward')</h2>
-
-            @foreach($campaign->rewards as $reward)
-
-                @php $claimed_count = $reward->payments->count(); @endphp
-
-                <div class="reward-box @if($reward->quantity <= $claimed_count || $is_ended ) reward-disable @endif ">
-                    @if($reward->quantity > $claimed_count )
-                        <a href="{{route('add_to_cart', $reward->id)}}">
-                            <span class="reward-amount">@lang('app.pledge') <strong>{!! get_amount($reward->amount) !!}</strong></span>
-                            <span class="reward-text">{{$reward->description}}</span>
-                            <span class="reward-claimed-count"> {{$claimed_count}} @lang('app.claimed_so_far') {{$reward->quantity}} </span>
-                            <span class="reward-estimated-delivery"> @lang('app.estimated_delivery'): {{date('F Y', strtotime($reward->estimated_delivery))}}</span>
-                            <span class="reward-button"> @lang('app.select_reward') </span>
-                        </a>
-
-                    @else
-                        <span class="reward-amount">@lang('app.pledge') <strong>{!! get_amount($reward->amount) !!}</strong></span>
-                        <span class="reward-text">{{$reward->description}}</span>
-                        <span class="reward-claimed-count"> {{$claimed_count}} @lang('app.claimed_so_far') {{$reward->quantity}} </span>
-                        <span class="reward-estimated-delivery"> @lang('app.estimated_delivery'): {{date('F Y', strtotime($reward->estimated_delivery))}}</span>
-                        <span class="reward-button"> @lang('app.sold_out') </span>
-                    @endif
-                </div>
-            @endforeach
-
-        </div>
-    @endif
 
 </div>
