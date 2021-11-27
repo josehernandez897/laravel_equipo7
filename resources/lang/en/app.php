@@ -231,7 +231,7 @@ return [
     'banner_sub_header' =>
         'comencemos la aventura',
     'support_campaigns' => 'ver Proyectos',
-    'start_crowdfunding' => 'crear un proyecto',
+    'start_crowdfunding' => 'inicia un proyecto',
     'why_choose_us' => 'Por qué elegirnos',
     'explore_categories' => 'Explorar categorías',
     'secure' => 'Seguro',
